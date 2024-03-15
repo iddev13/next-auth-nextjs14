@@ -1,0 +1,174 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =======================================
+ Variables
+ ======================================= */
+:root {
+	--white: #fff;
+	--black: #000;
+	--fb5: rgba(141, 141, 141, 0.5);
+	--bg-mask: rgba(0, 0, 0, 0.3);
+
+	--dark: #191923;
+	--dark1: rgba(40, 40, 49, 0.9);
+	--dark2: #20202a;
+	--dark3: #121217;
+	--dark5: rgba(40, 40, 49, 1);
+
+	--light: #f1f1f1;
+	--light1: rgba(223, 213, 213, 0.95);
+	--light2: rgba(230, 230, 230, 0.9);
+	--light5: rgba(223, 213, 213, 1);
+
+	--text-color: #000;
+	--text-color1: #000;
+	--text-color2: #000;
+
+	--yellow-primary-0: #ffc107;
+	--yellow-primary-1: #ffd460;
+	--yellow-primary-2: #f07b3f;
+	--yellow-primary-3: #ea5455;
+	--yellow-primary-4: #ff165d;
+	--box-shadow: rgba(0, 0, 0, 0.17);
+
+	--ui1: #515668;
+}
+
+@layer base {
+	[data-theme='dark'] {
+		--bg-color: linear-gradient(to top, var(--dark), var(--dark));
+		--bg1-color: linear-gradient(to top, var(--dark1), var(--dark1));
+		--bg5-color: linear-gradient(to top, var(--dark5), var(--dark5));
+		--bg2-color: linear-gradient(to top, var(--dark2), var(--dark2));
+		--bg3-color: linear-gradient(to top, var(--dark3), var(--dark3));
+		--bg4-color: linear-gradient(to top, #262631, #262631);
+		--bg-burger-hover-color: linear-gradient(
+			to top,
+			var(--dark3),
+			var(--dark3)
+		);
+		--card-triangle: #262631;
+
+		--text-color: #fff;
+		--text-color1: #646466;
+		--text-color2: #8c8c8e;
+
+		--text-hover-color: var(--yellow-primary-0);
+		--text-hover-color1: var(--yellow-primary-2);
+
+		--progressbar-line-bg: var(--dark1);
+		--pulse-color: rgba(0, 0, 0, 0.45);
+
+		--svg-color: var(--white);
+
+		--burger-color: var(--text-color);
+
+		--box-shadow: rgba(114, 115, 131, 0.17);
+		--tag-shadow: rgba(139, 139, 179, 0.5);
+
+		::selection {
+			background: var(--yellow-primary-0);
+		}
+	}
+
+	[data-theme='light'] {
+		--bg-color: linear-gradient(to top, var(--light), var(--light));
+		--bg1-color: linear-gradient(to top, var(--light1), var(--light1));
+		--bg2-color: linear-gradient(to top, var(--light2), var(--light2));
+		--bg3-color: linear-gradient(to top, var(--light1), var(--light1));
+		--bg4-color: linear-gradient(
+			to top,
+			rgb(226, 226, 226),
+			rgb(226, 226, 226)
+		);
+		--bg5-color: linear-gradient(to top, var(--light5), var(--light5));
+		--card-triangle: rgb(226, 226, 226);
+
+		--bg-burger-hover-color: linear-gradient(
+			to top,
+			var(--light),
+			var(--light)
+		);
+		--text-color: #111;
+		--text-color1: #646466;
+		--text-color2: #1e1e28;
+
+		--text-hover-color: var(--yellow-primary-0);
+		--text-hover-color1: var(--yellow-primary-2);
+
+		--progressbar-line-bg: var(--light2);
+		--pulse-color: rgba(255, 255, 255, 0.45);
+
+		--svg-color: var(--dark1);
+		--burger-color: var(--text-color);
+
+		--box-shadow: rgba(0, 0, 0, 0.17);
+		--tag-shadow: #0f0f1433;
+
+		::selection {
+			background: var(--yellow-primary-2);
+		}
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--color-bg: #2c2c32;
+	--color-active: #0f7dc6;
+}
+body {
+	@apply relative w-full h-full bg-bg-color font-poppins font-light text-text-color;
+}
+
+header {
+	background-color: var(--color-bg);
+	padding: 2rem 0;
+	text-align: center;
+}
+header > a {
+	color: white;
+	text-decoration: none;
+	padding: 0 1rem;
+}
+header > a:hover {
+	text-decoration: underline;
+}
+
+h1 {
+	@apply text-center font-bold text-2xl mb-5;
+}
+
+button {
+	@apply py-2 px-4 rounded bg-sky-600 text-white;
+}
+
+main {
+	min-height: calc(100vh - 85px - 22px);
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+
+main a {
+	text-decoration: none;
+	color: var(--color-bg);
+}
+main a:hover {
+	text-decoration: underline;
+}
+
+.active {
+	color: var(--color-active);
+	cursor: default;
+}
+
+.stack {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}

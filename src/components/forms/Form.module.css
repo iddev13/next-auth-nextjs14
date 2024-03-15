@@ -1,0 +1,107 @@
+.form {
+	@apply relative py-[10px] md:p-0 mb-3 w-full;
+}
+.form__item {
+	@apply mb-8 lg:mb-10;
+}
+.form select {
+	@apply bg-blue-500  rounded-lg outline-none p-2 w-full;
+}
+.inputWrapper {
+	@apply w-full h-[50px] relative;
+}
+
+.inputWrapper input {
+	@apply text-text-color w-full bg-transparent rounded-lg h-full pl-14 outline-none;
+	border: 1px solid #8f8f8f;
+}
+.inputWrapper input:focus {
+	@apply border-text-hover-color;
+}
+.inputWrapper__icon {
+	@apply absolute top-[1px] left-[1px]  w-[49px] bg-bg1-color rounded-s-lg text-center pt-[13px] text-sm text-white;
+	height: calc(100% - 2px);
+}
+.inputWrapper__icon svg {
+	@apply inline-block w-4 h-4 fill-text-color mt-0.5;
+}
+.inputWrapper label {
+	@apply absolute text-text-color top-1/2 left-16 capitalize text-xs -translate-y-1/2 bg-bg-color px-2 transition-all duration-300;
+}
+.inputWrapper__text {
+	@apply pt-1 pl-5 text-red-600 text-xs;
+}
+.inputWrapper span {
+	@apply text-red-600 text-xs;
+}
+
+.textarea {
+	@apply h-[250px];
+}
+
+.textarea textarea {
+	@apply text-text-color w-full bg-transparent rounded-lg h-full pl-14 resize-none outline-none py-4;
+	border: 1px solid #8f8f8f;
+}
+
+.textarea:focus {
+	@apply border-text-hover-color;
+}
+
+.textarea label {
+	@apply top-4 translate-y-0;
+}
+
+.inputFile label {
+	@apply w-full h-12 bg-text-hover-color cursor-pointer flex items-center justify-center rounded-lg overflow-hidden relative px-5 transition;
+}
+.inputFile input[type='file'] {
+	@apply absolute top-0 left-0 w-0 h-0 invisible opacity-0;
+}
+
+.checkbox {
+	@apply inline-flex items-center gap-4 flex-row-reverse;
+}
+
+.checkbox input[type='checkbox'] {
+	@apply w-10 h-10 cursor-pointer;
+}
+.checkbox label {
+	@apply cursor-pointer;
+}
+
+.date {
+	@apply inline-flex gap-4;
+}
+
+.date input[type='date'] {
+	@apply bg-blue-500 pl-2 pr-1 w-32 rounded;
+}
+
+.active input,
+.active textarea {
+	@apply border-text-hover-color;
+}
+.active label {
+	@apply top-[1px] -translate-y-full text-[8px] z-10 text-text-hover-color;
+}
+
+.btn {
+	@apply bg-text-hover-color rounded-lg py-2 px-5  transition-colors inline-flex items-center;
+}
+
+.btn span {
+	@apply text-lg capitalize text-black;
+}
+
+@media (pointer: fine) {
+	.inputFile label:hover {
+		@apply bg-text-hover-color1;
+	}
+	.date input[type='date']::-webkit-calendar-picker-indicator:hover {
+		@apply bg-slate-200;
+	}
+	.btn:hover {
+		@apply bg-text-hover-color1;
+	}
+}
