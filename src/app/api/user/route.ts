@@ -23,6 +23,8 @@ const validationSchema = yup.object().shape({
 export async function POST(req: Request) {
 	try {
 		const body = await req.json();
+		console.log({ body });
+
 		const { email, password } = validationSchema.cast(body);
 		// check if email already exists
 		const existingUserByemail = await db.user.findFirst({
